@@ -19,4 +19,11 @@ public class AppTest {
         moodAnalyser = new MoodAnalyser("I am in Happy Mood");
         assertEquals("HAPPY", moodAnalyser.analyseMood());
     }
+
+    @Test
+    public void checkNUllTest() {
+        moodAnalyser = new MoodAnalyser(null);
+        assertEquals("HAPPY", moodAnalyser.analyseMood());
+    }
+
 }

@@ -14,12 +14,17 @@ public class MoodAnalyser {
     }
 
     public String analyseMood() {
-        this.msg = this.msg.toLowerCase();
-        String words[] = this.msg.split(" ");
-        boolean check = Arrays.asList(words).contains("sad");
-        if (check)
-            return "SAD";
-        return "HAPPY";
+        try {
+            this.msg = this.msg.toLowerCase();
+            String words[] = this.msg.split(" ");
+            boolean check = Arrays.asList(words).contains("sad");
+            if (check)
+                return "SAD";
+            return "HAPPY";
+        } catch (NullPointerException e) {
+            return "HAPPY";
+        }
+
     }
 
 }
