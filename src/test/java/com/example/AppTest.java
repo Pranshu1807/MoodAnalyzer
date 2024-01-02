@@ -1,20 +1,22 @@
 package com.example;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-{
-    /**
-     * Rigorous Test :-)
-     */
+public class AppTest {
+
+    MoodAnalyser moodAnalyser = null;
+
     @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
+    public void sadTest() {
+        moodAnalyser = new MoodAnalyser();
+        assertEquals("SAD", moodAnalyser.analyseMood("I am in Sad Mood"));
+    }
+
+    @Test
+    public void happyTest() {
+        moodAnalyser = new MoodAnalyser();
+        assertEquals("HAPPY", moodAnalyser.analyseMood("I am in Happy Mood"));
     }
 }
